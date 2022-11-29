@@ -1,0 +1,38 @@
+﻿@page
+@using MyLittleDic.Models
+@model MyLittleDic.Pages.SetFormsModel
+@{
+}
+
+<script>
+	function PassForms(){
+		var idLang = document.getElementById("language").value;
+		var idPos = document.getElementById("pos").value;
+		var urlString = "AddWords?usedForms="
+		
+		//window.location.href = "AddWords?codeEntry="  + "&idPos=" + idPos;
+	}
+</script>
+
+<div>
+	<h3>Language: <strong>@Model.lang.nameLanguage</strong></h3>
+	<h3>Part of Speech: <strong>@Model.pos.namePos</strong></h3>
+	<br /><br>
+	<form asp-controller="AddEntry" asp-action="AddWords" runat="server">
+		<div>
+
+			@foreach(var form in Model.langForms){
+
+				/*Word word = new Word();
+                word.idForm = form.idForm;
+
+                Model.wordList.Add(word);*/
+
+				<label asp-for="@form.nameForm">@form.nameForm</label><input runat="server" class="form-control newWordForm" ID="@form.idForm" /> <br>
+			}
+		</div>
+
+		<button class="btn btn-primary" value="passToForms" onclick="javascript:PassForms()" type="button">Add Words</button>
+	</form>
+
+</div>

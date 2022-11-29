@@ -1,0 +1,49 @@
+﻿@page
+@model MyLittleDic.Pages.AddEntriesModel
+@{
+}
+
+<script>
+	function PassForms(){
+		var idLang = document.getElementById("language").value;
+		var idPos = document.getElementById("pos").value;
+		window.location.href = "SetForms?idLang=" + idLang + "&idPos=" + idPos;
+	}
+</script>
+
+<div>
+	<h1 class="display-4">Add Form</h1>
+	<form id="addForm" method="post">
+		Select language: <select class="form-select" id="language" name="language">
+
+			@foreach(var lang in Model.Langs){
+				<option value="@lang.idLanguage">@lang.nameLanguage</option>
+			}
+
+
+		</select><br />
+		Select part of speech <select class="form-select" id="pos" name="pos">
+
+			@foreach (var pos in Model.Parts)
+			{
+				<option value="@pos.idPos">@pos.namePos</option>
+			}
+
+			
+		</select><br />
+
+		Enter lemma form: <input type="text" class="form-control" id="lemma" name="lemma"><br />
+		Enter definition: <input type="textarea" list="ListOfDefs" class="form-control" id="definition" name="definition"><br />
+
+		<datalist id="ListOfDefs">
+			@foreach (var def in Model.Defs)
+			{
+				<option value="@def.descr"></option>
+			}
+		</datalist>
+		
+		<button class="btn btn-primary" value="passToForms" type="submit">Add entry</button>
+
+	</form>
+</div>
+

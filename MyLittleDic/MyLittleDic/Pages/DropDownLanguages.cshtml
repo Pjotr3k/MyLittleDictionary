@@ -1,0 +1,9 @@
+﻿@page
+@model MyLittleDic.Pages.DropDownLanguages
+@{
+}
+
+@foreach(var lang in Model.Langs){
+	<option value="@lang.idLanguage">@lang.nameLanguage</option>
+
+}
