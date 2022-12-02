@@ -18,21 +18,36 @@
 	<h3>Language: <strong>@Model.lang.nameLanguage</strong></h3>
 	<h3>Part of Speech: <strong>@Model.pos.namePos</strong></h3>
 	<br /><br>
-	<form asp-controller="AddEntry" asp-action="AddWords" runat="server">
-		<div>
+	<form id="AddForm" method="post" name="AddForm">
 
-			@foreach(var form in Model.langForms){
+		<input type="text" class="disabled" name="EntryID" value="@Model.entry.idEntry" />
 
-				/*Word word = new Word();
-                word.idForm = form.idForm;
+		<fieldset >
+			<legend>Choose which form you want to edit</legend>
+			
+			@foreach(var forma in Model.langForms){
 
-                Model.wordList.Add(word);*/
-
-				<label asp-for="@form.nameForm">@form.nameForm</label><input runat="server" class="form-control newWordForm" ID="@form.idForm" /> <br>
+				
+				<input class="form-check-input" type="radio" name="form" id="@forma.idForm" value="@forma.idForm" required>
+							
+					if (Model.wordList.Exists(x => x.idForm == forma.idForm))
+					{
+						string currWord = Model.wordList.Find(x => x.idForm == forma.idForm).word;
+						<label class="form-check-label" for="@forma.idForm">@forma.nameForm, Current: <strong>@currWord</strong></label>
+					}
+				
+					else{
+						<label class="form-check-label" for="@forma.idForm">@forma.nameForm</label>
+					}
+				<br />
 			}
-		</div>
+			
 
-		<button class="btn btn-primary" value="passToForms" onclick="javascript:PassForms()" type="button">Add Words</button>
+		</fieldset><br />
+		Enter the form: <input type="text" class="form-control" id="word" name="word" required><br />
+		
+		<button class="btn btn-primary" id="AddWord" name="AddWord" value="@Model.entry.idEntry" type="submit">Add form</button>
+
 	</form>
 
 </div>

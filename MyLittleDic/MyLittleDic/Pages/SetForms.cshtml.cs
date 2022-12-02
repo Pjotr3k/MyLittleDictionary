@@ -14,7 +14,7 @@ namespace MyLittleDic.Pages
         Form forma = new Form();
         public List<Form> langForms = new List<Form>();
         public List<Word> wordList = new List<Word>();
-        Entry entry = new Entry();
+        public Entry entry = new Entry();
         string code;
         public int idEntry;
         public string urlControl = "AddWords?";
@@ -22,43 +22,34 @@ namespace MyLittleDic.Pages
 
         public void OnGet()
         {
-            idLanguage = Request.Query["idLang"];
-            idPos = Request.Query["idPos"];
+            int idEntry = Convert.ToInt32(Request.Query["entry"]);
+            Entry cEntr = new Entry();
+            Form cForma = new Form();
+            Word cWord = new Word();
 
-            lang = lang.GetLanguageById(Convert.ToInt32(idLanguage));
-            pos = pos.GetPartOfSpeechById(Convert.ToInt32(idPos));
+            entry = cEntr.GetEntryById(idEntry).First();
+            langForms = cForma.GetPosFormsByLang(entry.idLanguage, entry.idPos);
+            wordList = cWord.GetWordsByEntry(entry.idEntry);
 
-            langForms = forma.GetPosFormsByLang(Convert.ToInt32(idLanguage), Convert.ToInt32(idPos));
-
-            urlControl += "usedForms=";
-
-            foreach(var elem in langForms)
-            {
-                urlControl += elem.idForm.ToString() + "w";
-            }
-            //urlControl += ""
+            
 
 
         }
 
         public void OnPost()
         {
-            //string lemma //= langForms[0].ToString(); //Request.Form[langForms[0].idForm.ToString()];
-            //code = GenerateCode(idLanguage, idPos, lemma);
+            Word aWord = new Word();
+            aWord.idEntry = Convert.ToInt32(Request.Form["AddWord"]);
+            aWord.word = Request.Form["word"].ToString();
+            aWord.idForm = Convert.ToInt32(Request.Form["form"]);
 
-            //idEntry = entry.AddEntry(5, 2, lemma);
-            //idEntry = entry.AddEntry(Convert.ToInt32(idLanguage), Convert.ToInt32(idPos), code);
+            Console.Write("idForm" + aWord.idForm);
+            Console.Write("idEntry" + aWord.idEntry);
+            Console.Write("word" + aWord.word);
 
-            foreach (var form in langForms)
-            {
-                Word word = new Word();
-                word.idEntry = idEntry;
-                word.idForm = form.idForm;
-                word.word = Request.Form[form.idForm.ToString()];
-
-                wordList.Add(word);
-            }
+            aWord.AddWord(aWord.idForm, aWord.idEntry, aWord.word);
         }
+        
 
         /*public string GenerateCode(string langid, string posid, string form)
         {

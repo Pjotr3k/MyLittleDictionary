@@ -5,6 +5,13 @@
     ViewData["Title"] = "Home page";
 }
 
+<script>
+	function PassForms(entry){
+				
+		window.location.href = "SetForms?entry=" + entry;
+	}
+</script>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 </div>
@@ -12,7 +19,7 @@
 <div>
     @foreach(var entry in Model.entries){
         <div>
-        <h4 class="h4"><strong>@entry.lemma.word</strong> <a class="text-muted align-content-sm-end" >edit</a></h4><hr>
+        <h4 class="h4"><strong>@entry.lemma.word</strong> </h4><hr>
         <h6 class="text-muted">@entry.langName - @entry.posName</h6>
         <ol>
             @foreach(var def in entry.defList){
@@ -20,7 +27,7 @@
             }
         </ol>
         <table class="table table-striped table-bordered table-hover table-sm">
-            <caption>Forms of the word <strong>@entry.lemma.word</strong> (@entry.defList.First().descr)</caption>
+                <caption>Forms of the word <strong>@entry.lemma.word</strong> (@entry.defList.First().descr) <a onclick="javascript:PassForms(@entry.idEntry)" class="btn btn-link btn-sm">edit forms</a> </caption>
             <colgroup>
                 <col class="col-md-4">
                 <col class="col-md-7">
@@ -34,6 +41,7 @@
             </tbody>
         }
         </table>
+            
         </div>
         
 
