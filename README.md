@@ -3,6 +3,10 @@ By Piotr Węgrzyniak
 
 This project is a dictionary.
 
+Installation:
+ - import database (./MyLittleDic/my_little_dict.sql)
+ - compile the project
+
 The Web App functionality
   - displaying entries (with information including the meaning, grammatical forms of given word as well of the language of the entry)
   - adding new entries (the "Add Entries" tab at menu bar)
