@@ -1,7 +1,7 @@
 # MyLittleDictionary
 By Piotr Węgrzyniak
 
-This project is a dictionary.
+MyLittleDictionary is a dictionary application that let you browse, search, and add new entries as well as forms to already existing entries. It uses primary .NET framework alongside MySql database.
 
 Installation:
  - import database (./MyLittleDic/my_little_dict.sql)
@@ -12,7 +12,7 @@ The Web App functionality
   - adding new entries (the "Add Entries" tab at menu bar)
   - adding forms to exisitng entries (the "edit forms" button below the table of forms of each entry)
   
-The database include following tables:
+The database includes following tables:
   - entries:      collects entries, being a connector between words with their meanings
   - definitions:  collets definitions of words. This table doesn't use a foreing key, this way you can use a single definition for many entries which makes implementing functions like finding translations and finding synonyms easier.
   - languages, parts_of_speech: collects languages and parts of speech, respectively
