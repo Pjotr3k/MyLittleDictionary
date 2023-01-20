@@ -133,6 +133,22 @@ namespace MyLittleDic.Models
             //else return -1;
         }
 
+        public EntryCollection GetEntriesCollection()
+        {
+            Entry ent = new Entry();
+            List<Entry> entryListConv = new List<Entry>();
+            EntryCollection entriesOutput = new EntryCollection();
+
+            entryListConv = ent.GetEntries();
+
+            foreach(var e in entryListConv)
+            {
+                entriesOutput.Add(e);
+            }
+
+            return entriesOutput;
+        }
+
         public int idEntry { get; set; }
         public int idLanguage { get; set; }
         public string langName { get; set; }

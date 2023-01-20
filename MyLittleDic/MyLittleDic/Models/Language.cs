@@ -1,5 +1,6 @@
-﻿using MySql.Data.MySqlClient;
-using static MyLittleDic.Models.SqlConnection;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
 
 namespace MyLittleDic.Models
 {
@@ -60,6 +61,7 @@ namespace MyLittleDic.Models
 
         }
 
+        
         public int idLanguage { get; set; }
         public string nameLanguage { get; set; }
 

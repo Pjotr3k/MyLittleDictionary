@@ -929,11 +929,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\User\\source\\repos\\MyLittleDic\\MyLittleDic\\MyLittleDic.csproj",
+      "projectUniqueName": "D:\\Pulpit\\doRoboty\\MyLittleDictionary-main\\MyLittleDictionary-main\\MyLittleDic\\MyLittleDic\\MyLittleDic.csproj",
       "projectName": "MyLittleDic",
-      "projectPath": "D:\\Users\\User\\source\\repos\\MyLittleDic\\MyLittleDic\\MyLittleDic.csproj",
+      "projectPath": "D:\\Pulpit\\doRoboty\\MyLittleDictionary-main\\MyLittleDictionary-main\\MyLittleDic\\MyLittleDic\\MyLittleDic.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\User\\source\\repos\\MyLittleDic\\MyLittleDic\\obj\\",
+      "outputPath": "D:\\Pulpit\\doRoboty\\MyLittleDictionary-main\\MyLittleDictionary-main\\MyLittleDic\\MyLittleDic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gWGy8ypdZpOOaOykp6zIWqAh8i6HI3BOr9cD0ENJkiaxVv6KZSMerh2/m32KtCul+zixgOLMgBrxEFasIR4TYA==",
+  "dgSpecHash": "jq5BhnKnFvzP0821Pf0vDuxOwSQZ9Y9uy0//NmK5qaEY6oQBTanLJPDrVwjdr8Xoefj2YoA4rYXLnQay/5g6TA==",
   "success": true,
-  "projectFilePath": "D:\\Users\\User\\source\\repos\\MyLittleDic\\MyLittleDic\\MyLittleDic.csproj",
+  "projectFilePath": "D:\\Pulpit\\doRoboty\\MyLittleDictionary-main\\MyLittleDictionary-main\\MyLittleDic\\MyLittleDic\\MyLittleDic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",

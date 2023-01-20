@@ -18,7 +18,7 @@ namespace MyLittleDic.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+                public void OnGet()
         {
             Entry entry = new Entry();
             entries = entry.GetEntries();
